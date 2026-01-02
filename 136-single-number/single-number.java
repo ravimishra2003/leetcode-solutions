@@ -1,9 +1,19 @@
 class Solution {
     public int singleNumber(int[] nums) {
-        int x=0;
-        for(int i=0; i<nums.length; i++){
-            x=x^nums[i];
+       Map<Integer, Integer> mp=new HashMap<>();
+       for(int x:nums){
+        if(mp.containsKey(x)){
+            mp.put(x,mp.get(x)+1);
         }
-        return x;
+        else{
+            mp.put(x,1);
+        }
+       }
+       for(int x:nums){
+        if(mp.get(x)==1){
+            return x;
+        }
+       }
+       return 0;
     }
 }

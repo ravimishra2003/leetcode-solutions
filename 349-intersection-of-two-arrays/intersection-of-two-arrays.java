@@ -4,15 +4,16 @@ class Solution {
         for(int i=0; i<nums1.length; i++){
             set1.add(nums1[i]);
         }
-        Set<Integer> set2=new HashSet<>();
+        List<Integer> l1=new ArrayList<>();
         for(int i=0; i<nums2.length; i++){
             if(set1.contains(nums2[i])){
-                set2.add(nums2[i]);
+                l1.add(nums2[i]);
+                set1.remove(nums2[i]);
             }
         }
-        int res[]=new int[set2.size()];
+        int res[]=new int[l1.size()];
         int i=0;
-        for(int num:set2){
+        for(int num:l1){
             res[i++]=num;
         }
         return res;

@@ -10,9 +10,8 @@ class Solution {
             }
         }
         Set<Integer> check =new  HashSet<>();
-        // Set<Integer> set =map1.keySet();
-        for(Integer a:map1.keySet()){
-            check.add(map1.get(a));
+        for(Integer a:map1.values()){
+            check.add(a);
 
         }
 

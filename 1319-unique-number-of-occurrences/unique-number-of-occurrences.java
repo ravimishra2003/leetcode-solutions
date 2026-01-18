@@ -11,11 +11,13 @@ class Solution {
         }
         Set<Integer> check =new  HashSet<>();
         for(Integer a:map1.values()){
-            check.add(a);
-
+            if(check.add(a)){
+                check.add(a);
+            }
+            else{
+                return false;
+            }
         }
-
-        return check.size()==map1.size();
-
+        return true;
     }
 }

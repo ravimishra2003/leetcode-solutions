@@ -11,13 +11,8 @@ class Solution {
         }
         Set<Integer> check =new  HashSet<>();
         for(Integer a:map1.values()){
-            if(check.add(a)){
-                check.add(a);
-            }
-            else{
-                return false;
-            }
+            check.add(a);
         }
-        return true;
+        return check.size()==map1.size();
     }
 }

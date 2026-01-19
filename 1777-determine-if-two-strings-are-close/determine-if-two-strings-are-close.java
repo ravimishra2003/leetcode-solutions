@@ -3,20 +3,22 @@ class Solution {
         if(word1.length()!=word2.length()){
             return false;
         }
-        int c1[]=new int[26];
-        int c2[]=new int[26];
-        for(int i=0; i<word1.length(); i++){
-            c1[word1.charAt(i)-'a']++;
-            c2[word2.charAt(i)-'a']++;
+        int freq1[]=new int[26];
+        int freq2[]=new int[26];
+        for(char c:word1.toCharArray()){
+            freq1[c-'a']++;
+        }
+        for(char c:word2.toCharArray()){
+            freq2[c-'a']++;
         }
         
         for(int i=0; i<26; i++){
-            if(c1[i]>0 && !(c2[i]>0)){
+            if((freq1[i]==0) != (freq2[i]==0)){
                 return false;
             }
         }
-        Arrays.sort(c1);
-        Arrays.sort(c2);
-        return Arrays.equals(c1,c2);
+        Arrays.sort(freq1);
+        Arrays.sort(freq2);
+        return Arrays.equals(freq1,freq2);
     }
 }

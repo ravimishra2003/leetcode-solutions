@@ -22,9 +22,8 @@ class Solution {
             }
         }
         int arr[]=new int[st.size()];
-        int i=0;
-        for(Integer value: st){
-            arr[i++]=value;
+        for(int i=st.size()-1; i>=0; i--){
+            arr[i]=st.pop();
         }
         return arr;
     }

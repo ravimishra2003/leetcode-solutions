@@ -4,10 +4,10 @@ class Solution {
         for(int ast : asteroids){
             boolean destroyed=false;
             while(!st.isEmpty() && st.peek()>0 && ast<0){
-                if(Math.abs(st.peek())< Math.abs(ast)){
+                if(st.peek() < -ast){
                     st.pop();
                 }
-                else if(Math.abs(st.peek())==Math.abs(ast)){
+                else if(st.peek() == -ast){
                     st.pop();
                     destroyed=true;
                     break;

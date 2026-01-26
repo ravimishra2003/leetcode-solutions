@@ -7,12 +7,8 @@ class Solution {
             min=Math.min(min,arr[i+1]-arr[i]);
         }
         for(int i=0; i<arr.length-1; i++){
-            List<Integer> sub=new ArrayList<>();
-            
             if(arr[i+1]-arr[i]==min){
-                sub.add(arr[i]);
-                sub.add(arr[i+1]);
-                l1.add(sub);
+                l1.add(Arrays.asList(arr[i],arr[i+1]));
             }
         }
         return l1;

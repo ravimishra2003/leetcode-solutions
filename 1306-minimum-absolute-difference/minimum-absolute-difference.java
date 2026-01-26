@@ -1,7 +1,7 @@
 class Solution {
     public List<List<Integer>> minimumAbsDifference(int[] arr) {
         Arrays.sort(arr);
-        List<List<Integer>> l1=new LinkedList<>();
+        List<List<Integer>> l1=new ArrayList<>();
         int min=Integer.MAX_VALUE;
         for(int i=0; i<arr.length-1; i++){
             min=Math.min(min,arr[i+1]-arr[i]);

@@ -6,15 +6,13 @@ class Solution {
         for(int i=0; i<arr.length-1; i++){
             min=Math.min(min,arr[i+1]-arr[i]);
         }
-        // System.out.println(min);
         for(int i=0; i<arr.length-1; i++){
             List<Integer> sub=new ArrayList<>();
             
             if(arr[i+1]-arr[i]==min){
                 sub.add(arr[i]);
                 sub.add(arr[i+1]);
-            l1.add(sub);
-
+                l1.add(sub);
             }
         }
         return l1;

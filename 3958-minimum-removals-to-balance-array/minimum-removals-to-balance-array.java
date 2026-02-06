@@ -11,7 +11,6 @@ class Solution {
             }
             else{
                 i++;
-                
             }
         }
         return nums.length-ans;

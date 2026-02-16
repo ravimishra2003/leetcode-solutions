@@ -23,11 +23,12 @@ class Solution {
         List<String> result=new ArrayList<>();
         for(String word: words){
             String lower=word.toLowerCase();
+            char first=lower.charAt(0);
             Set<Character> row;
-            if(row1.contains(lower.charAt(0))){
+            if(row1.contains(first)){
                 row=row1;
             }
-            else if(row2.contains(lower.charAt(0))){
+            else if(row2.contains(first)){
                 row=row2;
             }
             else{

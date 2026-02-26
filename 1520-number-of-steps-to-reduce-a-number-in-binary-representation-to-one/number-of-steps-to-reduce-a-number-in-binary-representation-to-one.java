@@ -1,34 +1,17 @@
 class Solution {
     public int numSteps(String s) {
         int count=0;
-        // int n=s.length();
-        while(s.length()>1){
-            int n=s.length();
-            if(s.charAt(n-1)=='0'){
-                s=s.substring(0,s.length()-1);
-            }
-            else{
-                s=addone(s);
-            }
-            count++;
+        int carry=0;
+        int n=s.length();
+        for(int i=n-1; i>0; i--){
+           if(s.charAt(i)-'0'+carry==1){
+            count+=2;
+            carry=1;
+           } 
+           else{
+            count+=1;
+           }
         }
-        return count;
+        return count+carry;
     }
-    public static String addone(String s){
-        StringBuilder sb=new StringBuilder(s);
-
-        int i=sb.length()-1;
-        while(i>=0 && sb.charAt(i)=='1'){
-            sb.setCharAt(i,'0');
-            i--;
-        }
-        if(i<0){
-            sb.insert(0,'1');
-        }
-        else{
-            sb.setCharAt(i,'1');
-        }
-        return sb.toString();
-    }
-
 }
